@@ -1,24 +1,22 @@
-# hello
+# project name "hello"
+## my first vue project 
 
-## Project setup
-```
-yarn install
-```
 
-### Compiles and hot-reloads for development
+## To run this project :- 
+### install vue@cli by 
 ```
-yarn serve
+"yarn global add @vue/cli"
 ```
-
-### Compiles and minifies for production
+### then Running project by 
 ```
-yarn build
+"yarn serve".
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+
+
+
+
