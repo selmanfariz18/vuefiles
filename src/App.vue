@@ -1,5 +1,9 @@
 <template>
-<div id="app">hello {{name}}</div>
+  <div  id="app">
+    <div>hello {{name}}</div>
+    <h2 v-if="num==0">Is it working</h2>
+    <h2 v-else>Its not working</h2>
+  </div>
 </template>
 
 <script>
@@ -9,7 +13,9 @@ export default {
   name: "App",
   data(){
     return{
-      name:"selman"
+      name:"selman",
+      channel:"github",
+      num:0
     }
   }
 }
