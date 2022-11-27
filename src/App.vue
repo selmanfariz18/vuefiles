@@ -2,7 +2,11 @@
   <div  id="app">
     <div>hello {{name}}</div>
     <h2 v-if="num==0">Is it working</h2>
+    <h2 v-else-if="num>0">The num is +ve</h2>
+    <h2 v-else-if="num<0">The num is -ve</h2>
     <h2 v-else>Its not working</h2>
+    <p v-show="see">v-show used</p>
+    <p v-for="(name,index) in names" :key="name">{{index+1}}:{{name}}</p>
   </div>
 </template>
 
@@ -15,7 +19,9 @@ export default {
     return{
       name:"selman",
       channel:"github",
-      num:0
+      num:0,
+      see:false,
+      names:['selman','sahal','yasee']
     }
   }
 }
