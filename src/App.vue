@@ -7,6 +7,7 @@
     <h2 v-else>Its not working</h2>
     <p v-show="see">v-show used</p>
     <p v-for="(name,index) in names" :key="name">{{index+1}}:{{name}}</p>
+    <h2 v-for="name in fullnames" :key="name.first">{{name.first}} {{name.last}}</h2>
   </div>
 </template>
 
@@ -21,7 +22,10 @@ export default {
       channel:"github",
       num:0,
       see:false,
-      names:['selman','sahal','yasee']
+      names:['selman','sahal','yasee'],
+      fullnames:[{first:'Selmanul',last:'Farizy'},
+                {first:'Sahal',last:'Shamsu'},
+                {first:'Muhammed',last:'Yaseen'}]
     }
   }
 }
