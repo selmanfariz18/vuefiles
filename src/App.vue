@@ -1,47 +1,33 @@
 <template>
-  <div  id="app">
-    <div>hello {{name}}</div>
-    <h2 v-if="num==0">Is it working</h2>
-    <h2 v-else-if="num>0">The num is +ve</h2>
-    <h2 v-else-if="num<0">The num is -ve</h2>
-    <h2 v-else>Its not working</h2>
-    <p v-show="see">v-show used</p>
-    <p v-for="(name,index) in names" :key="name">{{index+1}}:{{name}}</p>
-    <h2 v-for="name in fullnames" :key="name.first">{{name.first}} {{name.last}}</h2>
-    <h2>sum:{{add(5,5,5)}}</h2>
-    <button v-on:click="name='Fariz'">click</button>
-    <h1>{{count}}</h1>
-    <div>
-      <button v-on:click="count+=1">Add</button>
-      <button v-on:click="count-=1">substract</button>
-      <button v-on:click="count=0">reset</button>
+  <div class="all">
+    <div class="pop">
+      <button @click="popup=true;a=1" v-if="a==0 && popup==false">show</button>
+      <popup v-show="popup" @close="popup=false;a=0"/>
     </div>
+    <selman name="sahal"/>
+    <selman name="azlam"/>
+    <selman name="ashna"/>
   </div>
 </template>
 
 <script>
-
+import selman from './components/selman.vue'
+import popup from './components/popup.vue'
 
 export default {
   name: "App",
+  components:{
+    selman,
+    popup,
+  },
   data(){
     return{
-      name:"selman",
-      channel:"github",
-      count:0,
-      num:0,
-      see:false,
-      names:['selman','sahal','yasee'],
-      fullnames:[{first:'Selmanul',last:'Farizy'},
-                {first:'Sahal',last:'Shamsu'},
-                {first:'Muhammed',last:'Yaseen'}]
-    }
-  },
-  methods: {
-    add(a,b,c){
-      return a+b+c
+      popup: false,
+      a: 0
+      
     }
   }
+  
 }
 </script>
 
@@ -56,5 +42,15 @@ export default {
 }
 .all{
   text-align: center;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
+.pop{
+  background-color: blueviolet;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
 </style>
